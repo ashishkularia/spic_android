@@ -27,3 +27,36 @@ class IfElseLadder{
 		System.out.println("Amount to Pay : " + total);
 	}
 }
+
+class SwitchStatement{
+	public static void main(String[] args) {
+		int num1, num2, num3=0;
+		String oper;
+		Scanner obj=new Scanner(System.in);
+		System.out.println("Enter two Numbers");
+		num1=obj.nextInt();
+		num2=obj.nextInt();
+		System.out.println("Enter Operator");
+		oper=obj.next();
+		switch (oper){
+			case "+":
+				num3=num1+num2;
+				System.out.println("Result : "+num3);
+				break;
+			case "*":
+				num3=num1*num2;
+				System.out.println("Result : "+num3);
+				break;
+			case "/":
+				num3=num1/num2;
+				System.out.println("Result : "+num3);
+				break;
+			case "-":
+				num3=num1-num2;
+				System.out.println("Result : "+num3);
+				break;
+			default :
+				System.out.println("Invalid Operator");
+		}
+	}
+}
