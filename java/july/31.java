@@ -60,3 +60,22 @@ class SwitchStatement{
 		}
 	}
 }
+
+class NestedSwitchStatement{
+	switch (expression){
+		case 1:
+			break;
+		case 2:
+			switch (expression) {
+				case 1:
+					break;
+				case 2:
+					break;
+				default:
+			}
+			break;
+		case 3:
+			break;
+		default:
+	}
+}
