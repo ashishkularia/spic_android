@@ -11,8 +11,10 @@ class ClassDemo{
 		obj2.getData("Ashish",22);
 		obj2.show();
 		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the basic Salary");
 		int salary=sc.nextInt();
 		double gross = obj2.cal_gross(salary);
+		System.out.println("Gross Salary is "+gross);
 	}
 }
 /*	Declare each data member with private access specifier so that the scope of that variable is within the class
