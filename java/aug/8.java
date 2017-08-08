@@ -9,6 +9,7 @@ class Polymorphism{
 		obj.area();
 		obj.rectarea();
 		obj.volume();
+		
 		Emp obj2 = new Emp();
 		obj2.getData(22,143);
 		obj2.show();
@@ -71,5 +72,58 @@ class Emp {
 
 	public void show() {
 		System.out.println("Name is "+name+"\nAddress is "+address+"\nAge : "+age+"\nID : "+empid+"\nsalary : "+salary+"\nBonus : "+bonus);
+	}
+}
+
+class Inherritance {
+	public static void main(String[] args) {
+		Child obj = new Child();
+		Son obj1 = new Son();
+		obj1.getData("Rajesh");
+		obj1.getData("Ashish",22);		
+		obj1.show();
+	}
+}
+class Base {
+	String name;
+
+	public Base() {
+		System.out.println("Base Class");
+	}
+
+	public Base(String n) {
+		name = n;
+		System.out.println("Base class parameterized constructor "+name);
+	}
+
+}
+
+class Child extends Base {
+	public Child() {
+		super("Ashish");
+		System.out.println("Child Class");
+	}
+}
+
+class Father {
+	String name;
+	public void getData(String name) {
+		this.name=name;
+	}
+	public void show() {
+		System.out.println("Father Name is "+name);
+	}
+}
+
+class Son extends Father {
+	int age;
+	public void getData(String n, int a) {
+		super.show();							//function overriding
+		this.name=n;
+		age=a;
+	}
+
+	public void show() {
+		System.out.println("Child name is "+name+"\nAge is "+age);
 	}
 }
