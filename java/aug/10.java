@@ -1,10 +1,11 @@
 class MultipleInherritance {
 	public static void main(String[] args) {
-		DemoCompany obj = new DemoCompany();
+		Company obj = new DemoCompany();
+		Emp obj2 = new DemoCompany();
 		obj.getName("Spic");
-		obj.getDetail("Ashish",143);
+		obj2.getDetail("Ashish",143);
 		obj.show();
-		obj.showDetails();
+		obj2.showDetails();
 	}
 }
 
@@ -13,7 +14,7 @@ interface Company {
 	void show();
 }
 
-interface Emp {
+interface Emp extends Company {
 	void getDetail(String n, int id);
 	void showDetails();
 }
@@ -35,3 +36,4 @@ class DemoCompany implements Company, Emp {
 		System.out.println("Emp Name : "+ename+" Emp id : "+empid);
 	}
 }
+
