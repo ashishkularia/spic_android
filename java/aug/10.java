@@ -37,3 +37,42 @@ class DemoCompany implements Company, Emp {
 	}
 }
 
+class AbstractDemo {
+	public static void main(String[] args) {
+		Rect obj2 = new Rect();
+		obj2.getData (30,30);
+		obj2.area();
+		obj2.cirarea();
+		obj2.show();
+	}
+}
+
+abstract class Shape {
+	int len, wid, rad;
+	void getData(int l, int w) {
+		len = l;
+		wid = w;
+	}
+	public Shape(int r) {
+		rad = r;
+	}
+	abstract void show();
+}
+
+class Rect extends Shape {
+	int area;
+	double cirarea;
+	public Rect () {
+		super(20);
+	}
+	void area(){
+		area = len*wid;
+	}
+	void cirarea(){
+		cirarea = rad*rad*3.14;
+	}
+	void show() {
+		System.out.println("Rect Area Is "+area);
+		System.out.println("Circle Area is "+cirarea);
+	}
+}
