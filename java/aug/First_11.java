@@ -6,7 +6,7 @@ import java.awt.event.*;
 	<applet code="First_11.class" height=400 width=400></applet>
 */
 
-public class First_11 extends Applet implements ActionListener {
+public class First_11 extends Applet {
 	Button login, red, blue, green;
 	TextField txt;
 	public void init() {
@@ -21,27 +21,35 @@ public class First_11 extends Applet implements ActionListener {
 		add(red);
 		add(green);
 		add(blue);
-		login.addActionListener(this);
-		red.addActionListener(this);
-		green.addActionListener(this);
-		blue.addActionListener(this);
+		login.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				String str= ae.getActionCommand();
+				System.out.println(""+str);
+			}
+		});
+		red.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				String str= ae.getActionCommand();
+				System.out.println(""+str);
+				setBackground(Color.red);
+			}
+		});
+		green.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				String str= ae.getActionCommand();
+				System.out.println(""+str);
+				setBackground(Color.green);
+			}
+		});
+		blue.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				String str= ae.getActionCommand();
+				System.out.println(""+str);
+				setBackground(Color.blue);
+			}
+		});
 	}
 
-	public void actionPerformed(ActionEvent ae) {
-		String str= ae.getActionCommand();
-		System.out.println(""+str);
-		Object obj = ae.getSource();
-		System.out.println("Source is "+obj);
-		if (str.equals("Red")) {
-			setBackground(Color.red);
-		}
-		if (str.equals("Blue")) {
-			setBackground(Color.blue);
-		}
-		if (str.equals("Green")) {
-			setBackground(Color.green);
-		}
-	}
 
 	public void start() {
 		System.out.println("This is start()");
